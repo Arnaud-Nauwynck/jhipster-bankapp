@@ -1,0 +1,6 @@
+id;name;oper_type;min_quantity;max_quantity;instrument_id;fromPortfolio_id;toPortfolio_id
+1;auth virement EUR Compte Courant (John Smith)->Compte PEL (John Smith);virement;10;10000;1;1;2
+2;auth virement EUR Compte Courant (John Smith)->Compte Courant (Artur A.);virement;10;10000;1;1;3
+3;auth virement EUR Compte Courant (John Smith)->Compte Courant (Bernard B.);virement;10;10000;1;1;5
+4;auth virement EUR Compte Courant (John Smith)->Compte 1 (Enterprise E1);virement;10;10000;1;1;7
+

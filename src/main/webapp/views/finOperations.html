@@ -1,0 +1,120 @@
+<div>
+
+    <h2>FinOperations</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveFinOperationModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> Create a new FinOperation
+    </button>
+    <div class="modal fade" id="saveFinOperationModal" tabindex="-1" role="dialog" aria-labelledby="myFinOperationLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myFinOperationLabel">Create or edit a FinOperation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="finOperation.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label>CreationDate</label>
+                            <input type="date" class="form-control"
+                                   ng-model="finOperation.creationDate">
+                        </div>
+                        <div class="form-group">
+                            <label>ValueDate</label>
+                            <input type="date" class="form-control"
+                                   ng-model="finOperation.valueDate">
+                        </div>
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="text" class="form-control"
+                                   ng-model="finOperation.quantity">
+                        </div>
+                        <div class="form-group">
+                            <label>Comment</label>
+                            <input type="text" class="form-control"
+                                   ng-model="finOperation.comment">
+                        </div>
+
+                        <div class="form-group">
+                            <label>fromPortfolio</label>
+                            <select class="form-control" ng-model="finOperation.fromPortfolio.id" ng-options="portfolio.id as portfolio.name for portfolio in portfolios">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>toPortfolio</label>
+                            <select class="form-control" ng-model="finOperation.toPortfolio.id" ng-options="portfolio.id as portfolio.name for portfolio in portfolios">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>instrument</label>
+                            <select class="form-control" ng-model="finOperation.instrument.id" ng-options="instrument.id as instrument.name for instrument in instruments">
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span> Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CreationDate</th>
+                    <th>ValueDate</th>
+                    <th>Quantity</th>
+                    <th>Comment</th>
+                    <th>From Ptf</th>
+                    <th>To Ptf</th>
+                    <th>Instrument</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="finOperation in finOperations">
+                    <td>{{finOperation.id}}</td>
+                    <td>{{finOperation.creationDate}}</td>
+                    <td>{{finOperation.valueDate}}</td>
+                    <td>{{finOperation.quantity}}</td>
+                    <td>{{finOperation.comment}}</td>
+                    <td>({{finOperation.fromPortfolio.id}}) {{finOperation.fromPortfolio.name}}</td>
+                    <td>({{finOperation.toPortfolio.id}}) {{finOperation.toPortfolio.name}}</td>
+                    <td>({{finOperation.instrument.id}}) {{finOperation.instrument.name}}</td>
+                    <td>
+                        <button type="submit"
+                                ng-click="update(finOperation.id)"
+                                class="btn btn-default">
+                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(finOperation.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

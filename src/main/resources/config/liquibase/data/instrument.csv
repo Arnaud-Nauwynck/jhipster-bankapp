@@ -1,0 +1,7 @@
+id;name;type
+1;EUR;ccy
+2;USD;ccy
+3;Action 1;equity
+4;Action 2;equity
+5;CAC-40;index
+6;NASDAQ;index

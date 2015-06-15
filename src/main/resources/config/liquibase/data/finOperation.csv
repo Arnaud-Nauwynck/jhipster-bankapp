@@ -1,0 +1,9 @@
+id;creation_date;value_date;fromPortfolio_id;toPortfolio_id;quantity;instrument_id;comment
+1;2015-01-01;2015-01-02;10;1;3500;1;Salaire John Smith 201501 (from Enterprise E2)
+2;2015-01-04;2015-01-06;1;3;1500;1;Loyer John Smith 201501 -> Arthur A.
+3;2015-02-01;2015-02-02;10;1;3500;1;Salaire John Smith 201502 (from Enterprise E2)
+4;2015-02-04;2015-02-06;1;3;1500;1;Loyer John Smith 201501 -> Arthur A.
+5;2015-03-01;2015-03-02;10;1;3500;1;Salaire John Smith 201503 (from Enterprise E2)
+6;2015-03-04;2015-03-06;1;3;1500;1;Loyer John Smith 201501 -> Arthur A.
+7;2015-04-01;2015-04-02;10;1;3500;1;Salaire John Smith 201504 (from Enterprise E2)
+8;2015-04-04;2015-05-06;1;3;1500;1;Loyer John Smith 201501 -> Arthur A.

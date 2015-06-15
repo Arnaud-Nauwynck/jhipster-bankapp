@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "baseName": "ecommerce",
+    "packageName": "fr.iut.tests.ecommerce",
+    "packageFolder": "fr/iut/tests/ecommerce",
+    "authenticationType": "cookie",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8"
+  }
+}

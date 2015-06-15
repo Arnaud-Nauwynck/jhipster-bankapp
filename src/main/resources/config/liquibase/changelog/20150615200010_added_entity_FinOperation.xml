@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity FinOperation.
+    -->
+    <changeSet id="20150615200010" author="jhipster">
+        <createTable tableName="T_FINOPERATION">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="creation_date" type="date"/>
+            <column name="value_date" type="date"/>
+            <column name="quantity" type="decimal(10,2)"/>
+            <column name="comment" type="varchar(255)"/>
+            <column name="fromPortfolio_id" type="bigint"/>
+            <column name="toPortfolio_id" type="bigint"/>
+            <column name="instrument_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="fromPortfolio_id"
+                                 baseTableName="T_FINOPERATION"
+                                 constraintName="fk_finoperation_fromportfolio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_PORTFOLIO"/>
+        <addForeignKeyConstraint baseColumnNames="toPortfolio_id"
+                                 baseTableName="T_FINOPERATION"
+                                 constraintName="fk_finoperation_toportfolio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_PORTFOLIO"/>
+        <addForeignKeyConstraint baseColumnNames="instrument_id"
+                                 baseTableName="T_FINOPERATION"
+                                 constraintName="fk_finoperation_instrument_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_INSTRUMENT"/>
+    </changeSet>
+</databaseChangeLog>

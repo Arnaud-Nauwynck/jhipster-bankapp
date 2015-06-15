@@ -1,0 +1,11 @@
+id;type;name;thirdparty_id
+1;CAV;Compte Courant (John Smith);1
+2;PEL;Compte PEL (John Smith);1
+3;CAV;Compte Courant (Artur A.);2
+4;PEL;Compte PEL (Artur A.);2
+5;CAV;Compte Courant (Bernard B.);3
+6;PEL;Compte PEL (Bernard B.);3
+7;CAV;Compte 1 (Enterprise E1);4
+8;CAV;Compte 2 (Enterprise E1);4
+9;CAV;Compte 1 (Enterprise E2);5
+10;CAV;Compte 2 (Enterprise E2);5
